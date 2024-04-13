@@ -50,13 +50,22 @@ class _HomePageState extends State<HomePage> {
       [3, 4, 5],
       [6, 7, 8],
       [0, 3, 6],
-      [1, 5, 7],
+      [1, 4, 7],
       [2, 5, 8],
     ];
     var filteredList =
         possibilities.where((list) => list.contains(position)).toList();
 
+    print(position.toString());
+    print(filteredList.toString());
+    print(board.toString());
+
+
     for (int x = 0; x < filteredList.length; x++) {
+      print(x.toString());
+      print('${board[filteredList[x][0]]} == ${board[filteredList[x][1]]}');
+      print('${board[filteredList[x][0]]} == ${board[filteredList[x][2]]}');
+
       iswinner = board[filteredList[x][0]] == board[filteredList[x][1]] &&
           board[filteredList[x][0]] == board[filteredList[x][2]];
       if (iswinner) {
